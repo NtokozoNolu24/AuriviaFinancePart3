@@ -12,8 +12,8 @@ A comprehensive Android application built with Kotlin that helps users take cont
 
 AuriviaFinance is a feature-rich personal finance management app designed to help users monitor their spending habits, set budgets, and achieve financial goals. The app combines essential expense tracking with gamification elements to make financial management engaging and rewarding.
 
-**GitHub Repository:** [AuriviaFinance1](https://github.com/NtokozoNolu24/AuriviaFinance1.git)  
-**Demo Video:** [Watch on YouTube](https://youtu.be/MMKG_7ckF8k?feature=shared)
+**GitHub Repository:** [AuriviaFinance](https://github.com/NtokozoNolu24/AuriviaFinancePart3.git)  
+
 
 ## 👥 Team Structure
 
@@ -39,6 +39,7 @@ This project was developed collaboratively using a role-based approach:
 - 📈 **Category-based Spending Analysis** - Visual breakdown of expenses
 - 💰 **Budget Tracking** - Monitor spending against budget limits
 - 📅 **Period-based Reports** - Filter expenses by date ranges
+- **Pie chart & Bar Chart Features** - Displays total spendng using chart features
 
 ### Gamification Features
 - 🏆 **Points System** - Earn points for financial activities
