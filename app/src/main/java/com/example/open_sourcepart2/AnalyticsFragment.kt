@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
+import com.anychart.charts.Cartesian
 import androidx.core.util.Pair as AndroidPair
 
 class AnalyticsFragment : Fragment() {
@@ -37,6 +38,7 @@ class AnalyticsFragment : Fragment() {
     private var customEndDate: Date? = null
 
     private var pie: Pie? = null
+    private var barChart: com.anychart.charts.Cartesian? = null
 
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
     private val currencyFormat = NumberFormat.getCurrencyInstance().apply {
@@ -67,6 +69,10 @@ class AnalyticsFragment : Fragment() {
         // Initialize Pie Chart
         pie = AnyChart.pie()
         binding.anyChartView.setChart(pie)
+
+        //Initialize Bar Chart
+        barChart = AnyChart.column()
+        binding.barChartView.setChart(barChart)
 
         // Setup period selector
         val periods = arrayOf("This Week", "This Month", "Last 3 Months", "This Year")
@@ -141,6 +147,9 @@ class AnalyticsFragment : Fragment() {
 
             // Update Chart
             updateChart(categoryExpenses)
+
+            //Update Bar Chart
+            updateBarChart(categoryExpenses)
         }
     }
 
@@ -156,6 +165,27 @@ class AnalyticsFragment : Fragment() {
         pie?.legend()?.title()?.enabled(true)
         pie?.legend()?.title()?.text("Categories")
         pie?.legend()?.position("bottom")
+    }
+
+    private fun updateBarChart(categoryExpenses: List<CategoryExpenseAnalytics>) {
+
+        val data = mutableListOf<DataEntry>()
+
+        categoryExpenses.forEach {
+            data.add(
+                ValueDataEntry(
+                    it.categoryName,
+                    it.totalSpent
+                )
+            )
+        }
+
+        barChart?.data(data)
+
+        barChart?.title("Category Spending Comparison")
+
+        barChart?.yAxis(0)?.title("Amount Spent (R)")
+        barChart?.xAxis(0)?.title("Categories")
     }
 
     private fun getDateRange(periodIndex: Int): Pair<Date, Date> {
