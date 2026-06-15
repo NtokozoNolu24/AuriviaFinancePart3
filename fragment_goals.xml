@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:padding="20dp"
+
+    android:background="#F5F7F5">
+
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="🎯 Savings Goals"
+
+        android:textSize="28sp"
+
+        android:textStyle="bold"
+
+        android:textColor="#1B5E20"/>
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp">
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:padding="20dp"
+
+            android:orientation="vertical">
+
+
+            <TextView
+
+                android:text="Laptop Goal"
+
+                android:textSize="20sp"
+
+                android:textStyle="bold"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"/>
+
+
+
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="10dp"
+
+                android:progress="40"/>
+
+
+
+            <TextView
+
+                android:text="R2000 / R5000 saved"
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"/>
+
+
+
+            <Button
+
+                android:id="@+id/btnCreateGoal"
+
+                android:text="Create Goal"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+ 
+</LinearLayout>
