@@ -21,9 +21,10 @@ This project was developed collaboratively using a role-based approach:
 
 | Team Member | Role | Responsibilities |
 |------------|------|-----------------|
-| **Thato Menetje (ST10221273)** | UI & Navigation | • Login & Registration screens<br>• Navigation between fragments<br>• Dashboard, Expenses, Categories, Reports UI<br>• UI design and layout consistency |
-| **Ntokozo Mashiane (ST10455454)** | Database & Data Management | • Implemented SQLite Database<br>• Created data models and helpers<br>• Managed data persistence for users, categories, expenses, and income<br>• Implemented CRUD operations |
-| **Thobeka Sithole (ST10456076)** | Reports & Analytics | • Spending analysis and insights<br>• Budget tracking implementation<br>• Reports generation and visualization<br>• Category-based summaries |
+| **Thato Menetje (ST10221273)** | Authentication & Data Management  | • Login & Registration screens<br>• Navigation between fragments<br>• Dashboard, Expenses, Categories, Reports UI<br>• UI design and layout consistency |
+| **Ntokozo Mashiane (ST10455454)** | Analytics & Visualization | • Implemented Pie Chart analytics using AnyChart<br>• Implemented Bar Chart visualization for expense comparison<br>• Displayed spending distribution across expense categories<br>• Enhanced financial analysis through interactive data visualization |
+| **Thobeka Sithole (ST10456076)** | UI Implementation & Gamification | • Implemented gamification features including badges and reward points system<br>• Developed streak tracking system to encourage consistent expense logging<br>• Added achievement system for financial milestones (e.g., staying under budget, saving targets)<br>
+• Improved user engagement through reward-based progress tracking and motivation mechanics<br> |
 
 ## 🚀 Key Features
 
@@ -166,6 +167,48 @@ CREATE TABLE budgets (
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
 ```
+<h2>Analytics & Visualization Features</h2>
+
+<p>
+The application includes a comprehensive analytics module designed to help users understand and manage their financial behaviour through reports, filters, and interactive charts.
+</p>
+
+<h3>Reports System</h3>
+<ul>
+  <li>Calculates total spending across selected periods</li>
+  <li>Displays spending per category for detailed breakdown</li>
+  <li>Supports date filtering to view transactions within specific time ranges</li>
+  <li>Generates monthly summaries for better financial tracking</li>
+</ul>
+
+<h3>Graphical Insights</h3>
+<ul>
+  <li>Implements interactive <b>Pie Charts</b> and <b>Bar Charts</b> using AnyChart</li>
+  <li>Pie Chart visualises the distribution of expenses across categories</li>
+  <li>Bar Chart compares spending amounts between categories for easier analysis</li>
+  <li>Supports selectable time periods for dynamic data visualisation</li>
+  <li>Includes <b>minimum and maximum budget goal lines</b> on graphs for financial tracking</li>
+</ul>
+
+<h3>Visual Feedback System</h3>
+<ul>
+  <li>Displays real-time budget status messages:
+    <ul>
+      <li>“You are under budget”</li>
+      <li>“You exceeded maximum goal”</li>
+    </ul>
+  </li>
+  <li>Provides monthly spending indicators to highlight financial performance trends</li>
+</ul>
+
+<h3>Key Deliverables</h3>
+<ul>
+  <li>Reports screen for financial summaries and breakdowns</li>
+  <li>Graph screen for interactive data visualisation</li>
+  <li>Goal settings screen for managing budget limits</li>
+  <li>Advanced filtering system for customised data views</li>
+</ul>
+
 
 ## 🎮 Gamification System
 
@@ -188,6 +231,42 @@ The app includes a comprehensive gamification system to encourage consistent fin
 - **7-Day Streak:** +100 bonus points
 - **30-Day Streak:** +500 bonus points
 
+## Additional Feature 1: Financial Health Score
+
+A Financial Health Score feature was implemented to provide users with a quick overview of their spending habits and budgeting performance.
+
+### Purpose
+
+The feature calculates a score out of 100 based on the relationship between the user's total spending and their allocated budget. This allows users to easily understand how effectively they are managing their finances.
+
+### How It Works
+
+The system compares the total amount spent against the total budget:
+
+* Users who stay well within budget receive a high score.
+* Users approaching their budget receive a moderate score.
+* Users who exceed their budget receive a low score.
+
+### Score Indicators
+
+🟢 80–100: Excellent financial health
+
+🟡 50–79: Moderate financial health
+
+🔴 0–49: Poor financial health
+
+### Benefits
+
+* Provides immediate financial feedback.
+* Encourages responsible spending habits.
+* Helps users identify when they are overspending.
+* Improves financial awareness through a simple visual indicator.
+
+### Implementation
+
+The Financial Health Score is calculated dynamically using existing expense and budget data. No additional database tables are required, making the feature lightweight and efficient.
+
+
 ## 🚦 Setup Instructions
 
 ### Prerequisites
@@ -199,7 +278,7 @@ The app includes a comprehensive gamification system to encourage consistent fin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/NtokozoNolu24/AuriviaFinance1.git
+   git clone https://github.com/NtokozoNolu24/AuriviaFinancePart3.git
    ```
 
 2. **Open in Android Studio**
@@ -362,9 +441,9 @@ This project is developed for educational purposes as part of academic coursewor
 
 For questions or support, please contact the team members:
 
-- **Thato Menetje** - UI/Navigation Lead
-- **Ntokozo Mashiane** - Database Lead
-- **Thobeka Sithole** - Analytics Lead
+- **Thato Menetje** - Authentication & Database Lead
+- **Ntokozo Mashiane** - Analytics Lead
+- **Thobeka Sithole** - UI/Navigation & Gamification Lead
 
 ---
 
