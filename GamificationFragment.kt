@@ -16,60 +16,217 @@ class GamificationFragment : Fragment() {
     private lateinit var gamificationManager: GamificationManager
     private lateinit var achievementAdapter: AchievementAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentGamificationBinding.inflate(inflater, container, false)
+
+        _binding = FragmentGamificationBinding.inflate(
+            inflater,
+            container,
+            false
+        )
+
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
+
         super.onViewCreated(view, savedInstanceState)
 
-        gamificationManager = GamificationManager(requireContext())
+        gamificationManager =
+            GamificationManager(requireContext())
 
-        setupUI()
+
+        setupRecyclerView()
+
         loadGamificationData()
+
     }
 
-    private fun setupUI() {
-        binding.rvAchievements.layoutManager = LinearLayoutManager(requireContext())
-        achievementAdapter = AchievementAdapter(emptyList())
-        binding.rvAchievements.adapter = achievementAdapter
+
+
+    private fun setupRecyclerView(){
+
+        binding.rvAchievements.layoutManager =
+            LinearLayoutManager(requireContext())
+
+
+        achievementAdapter =
+            AchievementAdapter(emptyList())
+
+
+        binding.rvAchievements.adapter =
+            achievementAdapter
+
     }
 
-    private fun loadGamificationData() {
-        // Update user stats
-        val totalPoints = gamificationManager.getTotalPoints()
-        val currentLevel = gamificationManager.getUserLevel()
-        val pointsToNext = gamificationManager.getPointsToNextLevel()
-        val currentStreak = gamificationManager.getCurrentStreak()
 
-        binding.tvTotalPoints.text = "Total Points: $totalPoints"
-        binding.tvCurrentLevel.text = "Level $currentLevel"
-        binding.tvCurrentStreak.text = "Current Streak: $currentStreak days"
 
-        if (pointsToNext > 0) {
-            binding.tvPointsToNext.text = "$pointsToNext points to next level"
-            binding.progressLevel.progress = ((totalPoints.toFloat() / (totalPoints + pointsToNext)) * 100).toInt()
-        } else {
-            binding.tvPointsToNext.text = "Max level reached!"
-            binding.progressLevel.progress = 100
+
+
+    private fun loadGamificationData(){
+
+
+        val totalPoints =
+            gamificationManager.getTotalPoints()
+
+
+        val currentLevel =
+            gamificationManager.getUserLevel()
+
+
+        val pointsToNext =
+            gamificationManager.getPointsToNextLevel()
+
+
+        val currentStreak =
+            gamificationManager.getCurrentStreak()
+
+
+
+        // XP POINTS
+
+        binding.tvTotalPoints.text =
+            "$totalPoints XP"
+
+
+
+        // LEVEL TITLE
+
+        binding.tvCurrentLevel.text =
+            when {
+
+                currentLevel >= 10 ->
+                    "🏆 Finance Master"
+
+
+                currentLevel >= 5 ->
+                    "⭐ Money Champion"
+
+
+                else ->
+                    "🌱 Finance Beginner"
+
+            }
+
+
+
+
+        // STREAK
+
+        binding.tvCurrentStreak.text =
+            "🔥 $currentStreak Day Streak"
+
+
+
+
+
+        // LEVEL PROGRESS
+
+
+        if(pointsToNext > 0){
+
+
+            val progress =
+                (
+                        totalPoints.toFloat()
+                                /
+                                (totalPoints + pointsToNext)
+                        ) * 100
+
+
+
+            binding.progressLevel.progress =
+                progress.toInt()
+
+
+
+            binding.tvPointsToNext.text =
+                "${progress.toInt()}% completed • $pointsToNext XP to next level"
+
+
+        }
+        else{
+
+
+            binding.progressLevel.progress =
+                100
+
+
+            binding.tvPointsToNext.text =
+                "🎉 Maximum level reached!"
+
         }
 
-        // Load achievements
-        val achievements = gamificationManager.getAllAchievements()
-        achievementAdapter.updateAchievements(achievements)
 
-        // Update achievement stats
-        val unlockedCount = achievements.count { it.isUnlocked }
-        binding.tvAchievementProgress.text = "Achievements: $unlockedCount/${achievements.size}"
+
+
+
+
+
+        // ACHIEVEMENTS
+
+
+        val achievements =
+            gamificationManager.getAllAchievements()
+
+
+
+        achievementAdapter.updateAchievements(
+            achievements
+        )
+
+
+
+        val unlocked =
+            achievements.count {
+                it.isUnlocked
+            }
+
+
+
+        binding.tvAchievementProgress.text =
+            "🏅 $unlocked/${achievements.size} Achievements unlocked"
+
+
+
     }
 
-    override fun onDestroyView() {
+
+
+
+
+    override fun onResume(){
+
+        super.onResume()
+
+
+        if(::gamificationManager.isInitialized){
+
+            loadGamificationData()
+
+        }
+
+    }
+
+
+
+
+
+    override fun onDestroyView(){
+
         super.onDestroyView()
+
         _binding = null
+
     }
+
+
 }
