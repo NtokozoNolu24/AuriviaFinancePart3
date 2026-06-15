@@ -23,8 +23,7 @@ This project was developed collaboratively using a role-based approach:
 |------------|------|-----------------|
 | **Thato Menetje (ST10221273)** | Authentication & Data Management  | • Login & Registration screens<br>• Navigation between fragments<br>• Dashboard, Expenses, Categories, Reports UI<br>• UI design and layout consistency |
 | **Ntokozo Mashiane (ST10455454)** | Analytics & Visualization | • Implemented Pie Chart analytics using AnyChart<br>• Implemented Bar Chart visualization for expense comparison<br>• Displayed spending distribution across expense categories<br>• Enhanced financial analysis through interactive data visualization |
-| **Thobeka Sithole (ST10456076)** | UI Implementation & Gamification | • Implemented gamification features including badges and reward points system<br>• Developed streak tracking system to encourage consistent expense logging<br>• Added achievement system for financial milestones (e.g., staying under budget, saving targets)<br>
-• Improved user engagement through reward-based progress tracking and motivation mechanics<br> |
+| **Thobeka Sithole (ST10456076)** | UI Implementation & Gamification | • Implemented gamification features including badges and reward points system<br>• Developed streak tracking system to encourage consistent expense logging<br>• Added achievement system for financial milestones (e.g., staying under budget, saving targets)<br>• Improved user engagement through reward-based progress tracking and motivation mechanics<br> |
 
 ## 🚀 Key Features
 
