@@ -1,5 +1,5 @@
 
-# 💰 AuriviaFinance - Personal Finance Tracker
+# 💰 AuriviaFinance - Budget Tracking App
 
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
@@ -12,7 +12,11 @@ A comprehensive Android application built with Kotlin that helps users take cont
 
 AuriviaFinance is a feature-rich personal finance management app designed to help users monitor their spending habits, set budgets, and achieve financial goals. The app combines essential expense tracking with gamification elements to make financial management engaging and rewarding.
 
+### Who This App Is For 
+AuriviaFinance is designed for students, young professionals, and anyone who wants to take control of their personal finances. It is especially useful for users who struggle with budgeting, want to improve their saving habits, or prefer a more interactive and motivating way to manage money.
+
 **GitHub Repository:** [AuriviaFinance](https://github.com/NtokozoNolu24/AuriviaFinancePart3.git)  
+**YouTube Video Link:** https://youtu.be/aAnMH8toTXc?si=JHA_FdARxMO-0ldv 
 
 
 ## 👥 Team Structure
@@ -265,6 +269,61 @@ The system compares the total amount spent against the total budget:
 
 The Financial Health Score is calculated dynamically using existing expense and budget data. No additional database tables are required, making the feature lightweight and efficient.
 
+<h2>Additional Feature 2: Financial Rating System</h2>
+
+<p>
+A Financial Rating feature was implemented to evaluate users’ overall financial behaviour and progress through a combined scoring, personality classification, and ranking system.
+</p>
+
+<h3>Purpose</h3>
+<p>
+The feature calculates a score out of 100 based on user engagement and financial discipline. It goes beyond basic spending analysis by rewarding positive financial habits such as consistency, achievements, and long-term tracking.
+</p>
+
+<p>
+This helps users understand not only how they spend, but also how disciplined and consistent they are with managing their finances.
+</p>
+
+<h3>How It Works</h3>
+<ul>
+  <li><strong>Achievements:</strong> Users earn points for completing financial goals (e.g., staying under budget, saving targets).</li>
+  <li><strong>Streaks:</strong> Continuous usage or consistent logging of expenses increases the score.</li>
+  <li><strong>Accumulated Points:</strong> Users collect points over time based on positive financial actions.</li>
+</ul>
+
+<p>
+These components are combined to produce a final score out of 100.
+</p>
+
+<h3>Financial Personality System</h3>
+<ul>
+  <li><strong>Beginner</strong> – New users with limited tracking activity or low consistency</li>
+  <li><strong>Consistent Tracker</strong> – Users who regularly log expenses and maintain steady habits</li>
+  <li><strong>Smart Saver</strong> – Users who demonstrate good budgeting and saving discipline</li>
+  <li><strong>Finance Master</strong> – Highly disciplined users with strong consistency, savings, and achievements</li>
+</ul>
+
+<h3>Ranking System</h3>
+<ul>
+  <li>🥉 <strong>Bronze</strong> – Basic level performance and low engagement</li>
+  <li>🥈 <strong>Silver</strong> – Moderate consistency and improving financial habits</li>
+  <li>🥇 <strong>Gold</strong> – Strong financial discipline and high achievement rate</li>
+  <li>💎 <strong>Platinum</strong> – Excellent financial management and maximum consistency</li>
+</ul>
+
+<h3>Benefits</h3>
+<ul>
+  <li>Encourages users to stay consistent with financial tracking</li>
+  <li>Gamifies financial management to improve engagement</li>
+  <li>Rewards positive financial behaviour beyond simple budgeting</li>
+  <li>Provides motivational milestones through ranks and personalities</li>
+  <li>Helps users understand their financial habits in a more interactive way</li>
+</ul>
+
+<h3>Implementation</h3>
+<p>
+The Financial Rating System is calculated using existing user data such as achievements, streak counters, and stored points. The system updates dynamically as users interact with the app, making it responsive and continuously evolving without requiring major additional database complexity.
+</p>.
 
 ## 🚦 Setup Instructions
 
