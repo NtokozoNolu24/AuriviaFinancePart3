@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F5">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+
+        <!-- TITLE -->
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="🏆 Finance Journey"
+
+            android:textSize="28sp"
+            android:textStyle="bold"
+
+            android:textColor="#1B5E20"
+
+            android:layout_marginBottom="16dp"/>
+
+
+
+
+
+
+        <!-- LEVEL CARD -->
+
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="16dp"
+
+
+            app:cardCornerRadius="20dp"
+
+            app:cardElevation="6dp"
+
+            app:cardBackgroundColor="#2E7D32">
+
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+
+                android:padding="22dp">
+
+
+
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:text="Your Level"
+
+                    android:textColor="#C8E6C9"
+
+                    android:textSize="14sp"/>
+
+
+
+
+
+                <TextView
+
+                    android:id="@+id/tvCurrentLevel"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+
+                    android:text="🌱 Finance Beginner"
+
+                    android:textColor="#FFFFFF"
+
+                    android:textStyle="bold"
+
+                    android:textSize="24sp"
+
+                    android:layout_marginTop="5dp"/>
+
+
+
+
+
+
+                <TextView
+
+                    android:id="@+id/tvTotalPoints"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+
+                    android:text="0 XP"
+
+                    android:textColor="#FFD54F"
+
+                    android:textStyle="bold"
+
+                    android:textSize="20sp"
+
+                    android:layout_marginTop="8dp"/>
+
+
+
+
+
+
+                <ProgressBar
+
+                    android:id="@+id/progressLevel"
+
+                    style="?android:attr/progressBarStyleHorizontal"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="12dp"
+
+
+                    android:layout_marginTop="18dp"
+
+
+                    android:progressTint="#FFD54F"
+
+                    android:progressBackgroundTint="#1B5E20"/>
+
+
+
+
+
+
+                <TextView
+
+                    android:id="@+id/tvPointsToNext"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+
+                    android:text="0 XP to next level"
+
+
+                    android:textColor="#E8F5E9"
+
+
+                    android:textSize="14sp"
+
+
+                    android:layout_marginTop="10dp"/>
+
+
+
+
+
+                <TextView
+
+                    android:id="@+id/tvCurrentStreak"
+
+
+                    android:layout_width="wrap_content"
+
+
+                    android:layout_height="wrap_content"
+
+
+                    android:text="🔥 0 Day Streak"
+
+
+                    android:textColor="#FFFFFF"
+
+
+                    android:textStyle="bold"
+
+
+                    android:textSize="18sp"
+
+
+                    android:layout_marginTop="15dp"/>
+
+
+
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+        <!-- ACHIEVEMENT CARD -->
+
+
+        <com.google.android.material.card.MaterialCardView
+
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+
+            app:cardCornerRadius="20dp"
+
+
+            app:cardElevation="4dp"
+
+
+            app:cardBackgroundColor="#FFFFFF">
+
+
+
+
+
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+
+                android:orientation="vertical"
+
+
+                android:padding="18dp">
+
+
+
+
+
+
+                <LinearLayout
+
+
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content"
+
+
+                    android:orientation="horizontal">
+
+
+
+
+
+                    <TextView
+
+
+                        android:layout_width="0dp"
+
+
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_weight="1"
+
+
+                        android:text="🎖 Achievements"
+
+
+                        android:textSize="22sp"
+
+
+                        android:textStyle="bold"
+
+
+                        android:textColor="#1B5E20"/>
+
+
+
+
+
+
+                    <TextView
+
+
+                        android:id="@+id/tvAchievementProgress"
+
+
+                        android:layout_width="wrap_content"
+
+
+                        android:layout_height="wrap_content"
+
+
+                        android:text="🏅 0/6"
+
+
+                        android:textColor="#757575"
+
+
+                        android:textSize="14sp"/>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+
+
+                    android:id="@+id/rvAchievements"
+
+
+                    android:layout_width="match_parent"
+
+
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginTop="16dp"
+
+
+                    android:nestedScrollingEnabled="false"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
