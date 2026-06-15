@@ -189,7 +189,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = INSTANCE
                 instance != null && instance.isOpen
             } catch (e: Exception) {
-                Log.e(TAG, "Error checking database availability: ${e.message}", e)
+                Log.e(TAG, "Error checking database availability: ${e.message}")
                 false
             }
         }
@@ -207,28 +207,9 @@ abstract class AppDatabase : RoomDatabase() {
                 Log.d(TAG, "Database integrity check passed")
                 true
             } catch (e: Exception) {
-                Log.e(TAG, "Database integrity check failed: ${e.message}", e)
+                Log.e(TAG, "Database integrity check failed: ${e.message}")
                 false
             }
-        }
-    }
-    
-    // ==================== Lifecycle Methods ====================
-    
-    /**
-     * Called when the database is created for the first time.
-     * This is useful for initial data seeding (e.g., default categories).
-     * 
-     * Note: Room typically handles this automatically, but you can override
-     * this method by creating a Callback class.
-     */
-    override fun clearAllTables() {
-        try {
-            super.clearAllTables()
-            Log.d(TAG, "All tables cleared successfully")
-        } catch (e: Exception) {
-            Log.e(TAG, "Error clearing tables: ${e.message}", e)
-            throw e
         }
     }
 }
@@ -270,9 +251,9 @@ suspend fun <T> AppDatabase.safeDatabaseOperation(
  */
 fun AppDatabase.isReady(): Boolean {
     return try {
-        isOpen && !isClosed
+        isOpen
     } catch (e: Exception) {
-        Log.e("Database", "Error checking database readiness: ${e.message}", e)
+        Log.e("Database", "Error checking database readiness: ${e.message}")
         false
     }
 }
