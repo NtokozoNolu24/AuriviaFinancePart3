@@ -37,12 +37,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
 
                     <Spinner
                         android:id="@+id/spinnerPeriod"
-                        android:layout_width="0dp"
+                        android:layout_width="45dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/spinner_background_purple"
@@ -50,23 +50,23 @@
 
                     <Button
                         android:id="@+id/btnCustomRange"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date Range"
-                        android:textColor="#E040FB"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/rounded_button_purple_outline"
-                        style="@style/Widget.Material3.Button.OutlinedButton" />
+                        android:text="Date Range"
+                        android:textColor="#E040FB" />
 
                     <Button
                         android:id="@+id/btnRefresh"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Refresh"
-                        android:textColor="#E040FB"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/rounded_button_purple_outline"
-                        style="@style/Widget.Material3.Button.OutlinedButton" />
+                        android:text="Refresh"
+                        android:textColor="#E040FB" />
 
                 </LinearLayout>
 
@@ -244,6 +244,15 @@
                     android:textSize="16sp" />
 
             </LinearLayout>
+            <!-- financial health score-->
+            <TextView
+                android:id="@+id/tvFinancialHealth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Financial Health Score: 0/100"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
 
         </com.google.android.material.card.MaterialCardView>
 

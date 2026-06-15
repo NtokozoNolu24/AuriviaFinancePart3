@@ -256,6 +256,46 @@ class AnalyticsFragment : Fragment() {
         binding.tvTotalSpent.text = "Total Spent: ${currencyFormat.format(totalSpent)}"
         binding.tvAvgSpent.text = "Average per Category: ${currencyFormat.format(avgSpent)}"
         binding.tvHighestCategory.text = "Highest: ${highestCategory?.categoryName ?: "N/A"}"
+        val totalBudget = categoryExpenses.sumOf { it.budget }
+
+        updateFinancialHealthScore(
+            totalSpent,
+            totalBudget
+        )
+    }
+
+    private fun updateFinancialHealthScore(
+        totalSpent: Double,
+        totalBudget: Double
+    ) {
+
+        val score = if (totalBudget > 0) {
+            ((1 - (totalSpent / totalBudget)) * 100)
+                .coerceIn(0.0, 100.0)
+                .toInt()
+        } else {
+            100
+        }
+
+        binding.tvFinancialHealth.text =
+            "Financial Health Score: $score/100"
+
+        when {
+            score >= 80 -> {
+                binding.tvFinancialHealth.text =
+                    "🟢 Financial Health Score: $score/100"
+            }
+
+            score >= 50 -> {
+                binding.tvFinancialHealth.text =
+                    "🟡 Financial Health Score: $score/100"
+            }
+
+            else -> {
+                binding.tvFinancialHealth.text =
+                    "🔴 Financial Health Score: $score/100"
+            }
+        }
     }
 
     override fun onDestroyView() {
@@ -263,3 +303,4 @@ class AnalyticsFragment : Fragment() {
         _binding = null
     }
 }
+
