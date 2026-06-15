@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.open_sourcepart2.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_expenses"
+        android:name="com.example.open_sourcepart2.ExpensesFragment"
+        android:label="Expenses"
+        tools:layout="@layout/fragment_expenses" />
+
+    <fragment
+        android:id="@+id/navigation_analytics"
+        android:name="com.example.open_sourcepart2.AnalyticsFragment"
+        android:label="Reports"
+        tools:layout="@layout/fragment_analytics" />
+
+    <fragment
+        android:id="@+id/navigation_categories"
+        android:name="com.example.open_sourcepart2.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" />
+
+    <fragment
+        android:id="@+id/navigation_budget"
+        android:name="com.example.open_sourcepart2.BudgetFragment"
+        android:label="Budget"
+        tools:layout="@layout/fragment_budget" />
+
+    <fragment
+        android:id="@+id/navigation_gamification"
+        android:name="com.example.open_sourcepart2.GamificationFragment"
+        android:label="Rewards"
+        tools:layout="@layout/fragment_gamification" />
+
+    <fragment
+        android:id="@+id/navigation_insights"
+        android:name="com.example.open_sourcepart2.InsightsFragment"
+        android:label="Insights"
+        tools:layout="@layout/fragment_insights" />
+
+    <!-- ADD PROFILE FRAGMENT -->
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.open_sourcepart2.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
